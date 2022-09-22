@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Detail</title>
 </head>
+
 <body>
     <!-- Will alter data server-side, thus POST -->
     <form action="{% url 'testapp:vote' question.id %}" method="post">
@@ -20,4 +22,5 @@
         <input type="submit" value="Vote">
     </form>
 </body>
+
 </html>

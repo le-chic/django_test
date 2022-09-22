@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'testapp/style.css' %}">
     <title>Index</title>
 </head>
+
 <body>
     {% if latest_question_list %}
         <ul>
@@ -17,4 +19,5 @@
         <p>No polls are available.</p>
     {% endif %}
 </body>
+
 </html>

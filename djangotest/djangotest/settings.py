@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 
 from pathlib import Path
 
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # "testapp.middleware.DisableCacheMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -116,13 +119,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = "/home/afedorov/Documents/DjangoTest/djangotest/djangotest/static_root/"
-
 STATIC_URL = "static/"
 
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     "/home/afedorov/Documents/DjangoTest/djangotest/testapp/static/testapp/",
-)
+]
+
+STATIC_ROOT = "/home/afedorov/Documents/DjangoTest/djangotest/djangotest/static_root/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

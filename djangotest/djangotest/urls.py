@@ -15,6 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+# from django.views.decorators.cache import cache_control
+# from django.contrib.staticfiles.views import serve
+# from django.conf.urls.static import static
+# from . import settings
 
 app_name = 'testapp'
 
@@ -22,3 +26,5 @@ urlpatterns = [
     path(f'{app_name}/', include(f'{app_name}.urls')),
     path('admin/', admin.site.urls),
 ]
+
+# urlpatterns += static(settings.STATIC_URL, view=cache_control(no_cache=True, must_revalidate=True)(serve))
