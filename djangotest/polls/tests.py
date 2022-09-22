@@ -6,7 +6,7 @@ from django.urls import reverse
 
 from .models import Question
 
-app_name = "testapp"
+app_name = "polls"
 
 
 def create_question(question_text: str, days: int, without_choices: bool = False):

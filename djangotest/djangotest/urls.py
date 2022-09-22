@@ -20,7 +20,7 @@ from django.urls import include, path
 # from django.conf.urls.static import static
 # from . import settings
 
-app_name = 'testapp'
+app_name = 'polls'
 
 urlpatterns = [
     path(f'{app_name}/', include(f'{app_name}.urls')),

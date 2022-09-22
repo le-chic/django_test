@@ -6,7 +6,7 @@ from django.utils import timezone
 
 from .models import Choice, Question
 
-app_name = "testapp"
+app_name = "polls"
 
 # ListView : display a list of objects
 class IndexView(generic.ListView):

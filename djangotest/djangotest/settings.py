@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "testapp.apps.TestappConfig",           # MY APP
+    "polls.apps.PollsConfig",               # MY APP
     "django.contrib.admin",                 # admin site
     "django.contrib.auth",                  # authentication system
     "django.contrib.contenttypes",          # framework for content types
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # "testapp.middleware.DisableCacheMiddleware",
+    # "polls.middleware.DisableCacheMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -122,7 +122,7 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
-    "/home/afedorov/Documents/DjangoTest/djangotest/testapp/static/testapp/",
+    "/home/afedorov/Documents/DjangoTest/djangotest/polls/static/polls/",
 ]
 
 STATIC_ROOT = "/home/afedorov/Documents/DjangoTest/djangotest/djangotest/static_root/"

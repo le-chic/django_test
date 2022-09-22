@@ -3,12 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
     <title>Detail</title>
 </head>
 
 <body>
     <!-- Will alter data server-side, thus POST -->
-    <form action="{% url 'testapp:vote' question.id %}" method="post">
+    <form action="{% url 'polls:vote' question.id %}" method="post">
         <!-- Protection against Cross Site Request Forgeries for forms targeted at internal URLs -->
         {% csrf_token %}
         <fieldset>

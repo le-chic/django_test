@@ -6,20 +6,20 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 
 # Register app namespace : IMPORTANT !
-app_name = "testapp"
+app_name = "polls"
 
 urlpatterns = [
-    # ex: /testapp/
+    # ex: /polls/
     path(
         route='',                           # string containing a URL pattern
         view=views.IndexView.as_view(),     # call the specified view function upon finding a matching pattern
         name='index'                        # set a name for URL
     ),
-    # ex: /testapp/5/
+    # ex: /polls/5/
     path(route='<int:pk>/', view=views.DetailView.as_view(), name='detail'),
-    # ex: /testapp/5/results/
+    # ex: /polls/5/results/
     path(route='<int:pk>/results/', view=views.ResultsView.as_view(), name='results'),
-    # ex: /testapp/5/vote/
+    # ex: /polls/5/vote/
     path(route='<int:pk>/vote/', view=views.vote, name='vote'),
 ]
 
