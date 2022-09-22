@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.contrib import admin
 
 
 class Question(models.Model):
@@ -11,10 +12,20 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+    @admin.display(
+        boolean=True,
+        ordering='pub_date',
+        description='Recent',
+    )
     def was_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
+    @admin.display(
+        boolean=True,
+        ordering='pub_date',
+        description='Enough choices',
+    )
     def has_enough_choices(self):
         return True if len(self.choice_set.all()) >= 2 else False
 
