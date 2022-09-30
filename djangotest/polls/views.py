@@ -8,10 +8,11 @@ from .models import Choice, Question
 
 app_name = "polls"
 
+
 # ListView : display a list of objects
 class IndexView(generic.ListView):
     template_name = f'{app_name}/index.html'
-    context_object_name = 'latest_question_list'            # to override the automatically generated context variable
+    context_object_name = 'latest_question_list'  # to override the automatically generated context variable
 
     def get_queryset(self):
         """
@@ -60,7 +61,7 @@ class ResultsView(generic.DetailView):
 def vote(request: HttpRequest, pk: int):
     question = get_object_or_404(Question, pk=pk)
     try:
-        selected_choice = question.choice_set.get(pk=request.POST['choice'])        # access submitted data
+        selected_choice = question.choice_set.get(pk=request.POST['choice'])  # access submitted data
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form
         return render(
